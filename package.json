@@ -2,6 +2,9 @@
   "name": "nisruignite",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/Nisru-Projects/nisruignite.git",
+  "author": "Eman134#3237 <kaykeeman@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
