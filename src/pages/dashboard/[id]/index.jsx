@@ -3,7 +3,7 @@ import { DashboardLayout } from "../../../components/layouts/dashboard"
 const DashboardPage = () => {
     return (
         <div className="page">
-            Dashboard Page
+            Guild Page
         </div>
     )
 }

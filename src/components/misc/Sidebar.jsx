@@ -6,21 +6,39 @@ import { FaWrench } from "react-icons/fa"
 import { RiLogoutCircleLine } from "react-icons/ri"
 
 import styles from "./index.module.scss"
+import { useRouter } from "next/router"
+
+const routes = [
+    {
+        name: "Dashboard",
+        getPath: (id) => `/dashboard/${id}`,
+        icon: <MdSpaceDashboard size={48} />
+    },
+    {
+        name: "Commands",
+        getPath: (id) => `/dashboard/${id}/commands`,
+        icon: <BsTerminal size={48} />
+    },
+    {
+        name: "Settings",
+        getPath: (id) => `/dashboard/${id}/settings`,
+        icon: <FaWrench size={48} />
+    },
+]
 
 export const Sidebar = () => {
+
+    const router = useRouter()
+
     return (
         <div className={styles.sidebar}>
             <Image className={styles.avatar} src="/me.png" height={80} width={80} alt="guild_avatar" />
             <div className={styles.icons}>
-                <div>
-                    <MdSpaceDashboard size={48} />
-                </div>
-                <div>
-                    <BsTerminal size={48} />
-                </div>
-                <div>
-                    <FaWrench size={48} />
-                </div>
+                {routes.map((route) => (
+                    <div key={route.name} onClick={() => router.push(route.getPath(router.query.id))}>
+                        {route.icon}
+                    </div>
+                ))}
             </div>
             <div>
                 <RiLogoutCircleLine size={48} />

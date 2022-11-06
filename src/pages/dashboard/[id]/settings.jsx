@@ -1,15 +1,15 @@
 import { DashboardLayout } from "../../../components/layouts/dashboard"
 
-const CommandsPage = () => {
+const SettingsPage = () => {
     return (
         <div className="page">
-            Guild Commands Page
+            Guild Settings Page
         </div>
     )
 }
 
-CommandsPage.getLayout = function(page) {
+SettingsPage.getLayout = function(page) {
     return <DashboardLayout>{page}</DashboardLayout>
 }
 
-export default CommandsPage
+export default SettingsPage
