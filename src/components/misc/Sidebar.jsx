@@ -35,7 +35,7 @@ export const Sidebar = () => {
             <Image className={styles.avatar} src="/me.png" height={80} width={80} alt="guild_avatar" />
             <div className={styles.icons}>
                 {routes.map((route) => (
-                    <div key={route.name} onClick={() => router.push(route.getPath(router.query.id))}>
+                    <div className={styles.icon} key={route.name} onClick={() => router.push(route.getPath(router.query.id))}>
                         {route.icon}
                     </div>
                 ))}
