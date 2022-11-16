@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { GuildMenuItem } from "../../components/guilds/GuildMenuItem";
-import { fetchMutualGuilds } from "../../utils/styles/api";
+import { fetchMutualGuilds } from "../../utils/api";
 import styles from './index.module.scss'
 
 const DashboardPage = ({ guilds }) => {
