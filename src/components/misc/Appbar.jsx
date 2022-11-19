@@ -7,7 +7,7 @@ export const Appbar = () => {
     return (
         <div className={styles.appbar}>
             <div className={styles.menu} onClick={() => router.push("/dashboard") }>
-                <RiMenu3Line size={65} />
+                <RiMenu3Line size={24} />
                 <p>Dashboard</p>
             </div>
             <div>

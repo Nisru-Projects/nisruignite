@@ -12,17 +12,17 @@ const routes = [
     {
         name: "Dashboard",
         getPath: (id) => `/dashboard/${id}`,
-        icon: <MdSpaceDashboard size={48} />
+        icon: <MdSpaceDashboard size={24} />
     },
     {
         name: "Commands",
         getPath: (id) => `/dashboard/${id}/commands`,
-        icon: <BsTerminal size={48} />
+        icon: <BsTerminal size={24} />
     },
     {
         name: "Settings",
         getPath: (id) => `/dashboard/${id}/settings`,
-        icon: <FaWrench size={48} />
+        icon: <FaWrench size={24} />
     },
 ]
 
@@ -36,12 +36,12 @@ export const Sidebar = () => {
             <div className={styles.icons}>
                 {routes.map((route) => (
                     <div className={styles.icon} key={route.name} onClick={() => router.push(route.getPath(router.query.id))}>
-                        {route.icon}
+                        <div className={styles.item}>{route.icon} {route.name}</div>
                     </div>
                 ))}
             </div>
             <div>
-                <RiLogoutCircleLine size={48} />
+                <RiLogoutCircleLine size={24} />
             </div>
         </div>
     )
