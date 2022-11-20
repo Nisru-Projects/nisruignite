@@ -14,3 +14,7 @@ export const fetchMutualGuilds = async (context) => {
         return { redirect: '/' }
     }
 }
+
+export const fetchValidGuild = async (id, headers) => { 
+    return fetch(`${API_URL}/guilds/${id}/permissions`, { headers});
+}
