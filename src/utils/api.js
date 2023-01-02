@@ -7,7 +7,9 @@ export const fetchMutualGuilds = async (context) => {
     const headers = validadeCookies(context)
     if (!headers) return { redirect: { destination: '/' } }
     try {
-        const { data } = await axios.get(`${API_URL}/guilds`, { headers })
+        const res = await axios.get(`${API_URL}/guilds`, { headers })
+        if (!res.data) return { redirect: '/' }
+        const data = res.data
         return { props: { guilds: data.mutualGuilds } }
     } catch (error) {
         console.log(error)
@@ -16,5 +18,9 @@ export const fetchMutualGuilds = async (context) => {
 }
 
 export const fetchValidGuild = async (id, headers) => { 
-    return fetch(`${API_URL}/guilds/${id}/permissions`, { headers});
+    return fetch(`${API_URL}/guilds/${id}/permissions`, { headers });
+}
+
+export const fetchAdminPermissions = async (headers) => { 
+    return fetch(`${API_URL}/admin`, { headers });
 }
