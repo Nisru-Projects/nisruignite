@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+@include('partials/head')
+<body>
+  @include('partials/header')
+  <div class="container is-fluid">
+      @include('partials/dashboard/menu')
+      <main>
+        <div>
+          <h1 class="title"> Bem vindo! </h1>
+          <p class="subtitle">
+            Olá{{ (session.get('user') ? (' ' + session.get('user').nickName) : '') }}, seja bem vindo á Dashboard.
+          </p>
+        </div>
+      </main>
+  </div>
+</body>
+</html>

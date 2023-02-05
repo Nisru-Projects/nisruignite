@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+@include('partials/head')
+<body>
+  @include('partials/header')
+  <main>
+    <div>
+      <h1 class="title"> Bem vindo! </h1>
+      <p class="subtitle">
+        Olá{{ (session.get('user') ? (' ' + session.get('user').nickName) : '') }}, seja bem vindo ao Nisru.
+      </p>
+      <div>
+        @if(!session.get('account'))
+        <div style="margin-bottom: 10px">
+          <label class="checkbox">
+            <input id="tmip" type="checkbox"></input>
+            Eu concordo com os <a href="#">termos e condições</a>
+          </label>
+        </div>
+        <a id="createaccounthref">
+          <button id="btncreateaccount" class="button is-success" disabled>
+            <span class="icon is-small">
+              <i class="fas fa-check"></i>
+            </span>
+            <span>{{ session.get('user') ? 'Criar' : 'Entrar' }}</span>
+          </button>
+        </a>
+        @endif
+      </div>
+    </div>
+  </main>
+  <script>
+    
+    $('#tmip').change(function() {
+      if($(this).is(':checked')) {
+        $('#createaccounthref').attr('href', '/account/create');
+        $('#btncreateaccount').removeAttr('disabled');
+      } else {
+        
+        $('#createaccounthref').removeAttr('href');
+        
+        $('#btncreateaccount').attr('disabled', 'disabled');
+      }
+    });
+
+  </script>
+</body>
+</html>

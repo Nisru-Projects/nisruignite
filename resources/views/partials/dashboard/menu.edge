@@ -1,0 +1,117 @@
+<div id="expandmenu">
+  <label for="menu-toggle">
+    <i class="fa-solid fa-angles-right"></i>
+  </label>
+  <input type="checkbox" id="menu-toggle" class="is-hidden"/>
+</div>
+<aside id="sidemenu" class="menu is-fullheight is-fixed-top">
+  <p class="menu-label">
+    Geral
+  </p>
+  <ul class="menu-list">
+    <li>
+      <a class="is-active">
+        <i class="fa-solid fa-gauge"></i>
+        Painel
+      </a>
+    </li>
+    <li>
+      <a href="/me">
+        <i class="fa-solid fa-user"></i>
+        Perfil
+      </a>
+    </li>
+  </ul>
+  <p class="menu-label">
+    Administração
+  </p>
+  <ul class="menu-list">
+    <li>
+      <a>
+        <i class="fa-solid fa-chart-line"></i>
+        Estatísticas
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="fa-solid fa-server"></i>
+        Servidores
+      </a>
+    </li>
+  </ul>
+  <p class="menu-label">
+    Conta
+  </p>
+  <ul class="menu-list">
+    <li>
+      <a>
+        <i class="fa-solid fa-lock"></i>
+        Segurança
+      </a>
+    </li>
+  </ul>
+  <p class="menu-label">
+    Cobrança
+  </p>
+  <ul class="menu-list">
+    <li>
+      <a>
+        <i class="fa-solid fa-history"></i>
+        Histórico
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="fa-solid fa-credit-card"></i>
+        Métodos de Pagamento
+      </a>
+    </li>
+    <li>
+      <a>
+        <i class="fa-solid fa-coins"></i>
+        Saldo
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<script>
+
+  document.querySelector('#expandmenu').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#sidemenu').classList.toggle('is-active');
+    document.querySelector('#expandmenu').classList.toggle('is-active');
+    setExpandIcon();
+  });
+
+  function setExpandIcon() {
+    if (document.querySelector('#expandmenu').classList.contains('is-active')) {
+      document.querySelector('#expandmenu').querySelector('i').classList.remove('fa-angles-right');
+      document.querySelector('#expandmenu').querySelector('i').classList.add('fa-angles-left');
+    } else {
+      document.querySelector('#expandmenu').querySelector('i').classList.remove('fa-angles-left');
+      document.querySelector('#expandmenu').querySelector('i').classList.add('fa-angles-right');
+    }
+  }
+
+  jQuery(document).ready(function ($) {
+    $('ul.expandretract').on('click', function () {
+        $(this).siblings().find('ul.li').hide();
+        $(this).children('ul.li').show();
+    });
+  });
+  document.addEventListener("click", function (event) {
+    const dropdownMenu = document.querySelector(".dd");
+    if (!dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove("is-active");
+    }
+    const sidemenu = document.querySelector("#sidemenu");
+    const expandmenu = document.querySelector("#expandmenu");
+    if (!sidemenu.contains(event.target) && !expandmenu.contains(event.target)) {
+      sidemenu.classList.remove("is-active");
+      expandmenu.classList.remove("is-active");
+      setExpandIcon();
+    }
+
+  });
+</script>

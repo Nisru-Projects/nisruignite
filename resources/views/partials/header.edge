@@ -1,0 +1,150 @@
+<nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://i.imgur.com/NsABj8L.png">
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navmenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navmenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          <i class="fa-solid fa-house"></i>
+          &nbsp;Início
+        </a>
+        <a class="navbar-item">
+          <i class="fa-solid fa-file-waveform"></i>
+          &nbsp;Fórum
+        </a>
+        <a class="navbar-item">
+          <i class="fa-solid fa-signal"></i>
+          &nbsp;Status
+        </a>
+        <a class="navbar-item">
+          <i class="fa-solid fa-bug"></i>
+          &nbsp;Bug Report
+        </a>
+        <a class="navbar-item" href="https://github.com/Nisru-Projects/" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          &nbsp;Github
+        </a>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="themecontainer">
+            <i class="themeicon fa-solid fa-moon"></i>
+            <div id="switchcontainer">
+              <label class="switch">
+                <input type="checkbox" onclick="changeMode()">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="buttons">
+            @if(!session.get('user'))
+            <a class="button is-primary" href="/login">
+              <i class="fa-brands fa-discord"></i>
+              &nbsp;Entrar
+            </a>
+            @endif
+            @if(session.get('account') && session.get('user'))
+            <div onclick="menuToggle();" class="dropdown is-right dd">
+              <div class="dropdown-trigger">
+                <div style="display: flex; justify-content: center; align-items: center; cursor: pointer; padding: 4px; margin-right: 15px" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <img style="border-radius: 50%; margin: 4px" src="{{session.get('user').avatarUrl}}" class="avatar">
+                  <span> {{ session.get('user').nickName }}</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a class="dropdown-item" href="/me">
+                    <i class="fa-solid fa-user"></i>
+                    Perfil
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" href="/dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    Painel
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="dropdown-item" href="/logout">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Sair
+                  </a>
+                </div>
+              </div>
+            </div>
+            @endif
+
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<script>
+
+  var $dd = $('.dd');
+
+  $(window).resize(function() {
+    if (window.innerWidth >= 1023) $dd.addClass('is-right');
+    else $dd.removeClass('is-right');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+
+});
+  window.onload = function() {
+    if (document.cookie.includes("theme=dark")) {
+      document.body.classList.add("dark-mode");
+      document.getElementById("switchcontainer").getElementsByTagName("input")[0].checked = true;
+    }
+  };
+  function menuToggle() {
+    const toggleMenu = document.querySelector(".dd");
+    toggleMenu.classList.toggle("is-active");
+  }
+  function changeMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+
+    var theme
+
+    if (document.cookie.includes("theme=dark")) {
+      theme = "light"
+    } else {
+      theme = "dark"
+    }
+
+    var d = new Date();
+    d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = "theme=" + theme + "; " + expires;
+  }
+  document.addEventListener("click", function (event) {
+    const dropdownMenu = document.querySelector(".dd");
+    if (dropdownMenu != null && !dropdownMenu.contains(event.target)) {
+      dropdownMenu.classList.remove("is-active");
+    }
+  });
+</script>
