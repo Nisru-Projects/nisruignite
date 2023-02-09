@@ -9,7 +9,7 @@ export default class AccountController {
                 })
                 .then(() => {
                     Database.from('users')
-                        .where('userid', session.get('user').id)
+                        .where('discord_id', session.get('user').id)
                         .first()
                         .then((account) => {
                             session.put('account', account)

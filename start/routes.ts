@@ -2,7 +2,7 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.get('/', 'TestReact.index')
 
-Route.get('/dashboard', 'DashboardController.index').middleware('auth')
+Route.get('/dashboard', 'DashboardController.index').middleware(['auth', 'admin'])
 
 /*
 Route.get('/', async ({ view }) => {
