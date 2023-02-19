@@ -1,0 +1,24 @@
+import { useI18n } from '@microeinhundert/radonis'
+import { BaseLayout } from 'Layouts/Base'
+import { HydrationRoot } from '@microeinhundert/radonis'
+import SomeInteractiveIsland from 'Components/SomeInteractiveIsland.island'
+
+function Index () {
+  const { formatMessage$ } = useI18n()
+
+  const messages = {
+    title: formatMessage$('home.index.title'),
+  }
+
+  return (
+    <BaseLayout>
+      <h1>{messages.title}</h1>
+      <p>This is an empty view.</p>
+      <HydrationRoot>
+        <SomeInteractiveIsland />
+      </HydrationRoot>
+    </BaseLayout>
+  )
+}
+
+export { Index }

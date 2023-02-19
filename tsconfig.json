@@ -8,23 +8,18 @@
     "build"
   ],
   "compilerOptions": {
-    "jsx": "react",
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
     "paths": {
-      "App/*": [
-        "./app/*"
-      ],
-      "Config/*": [
-        "./config/*"
-      ],
-      "Contracts/*": [
-        "./contracts/*"
-      ],
-      "Database/*": [
-        "./database/*"
-      ]
+      "App/*": ["./app/*"],
+      "Config/*": ["./config/*"],
+      "Contracts/*": ["./contracts/*"],
+      "Database/*": ["./database/*"],
+      "Views/*": ["./resources/views/*"],
+      "Components/*": ["./resources/components/*"],
+      "Layouts/*": ["./resources/layouts/*"],
+      "resources/*": ["./resources/*"]
     },
     "types": [
       "@adonisjs/core",
@@ -33,9 +28,9 @@
       "@adonisjs/view",
       "@adonisjs/shield",
       "@japa/preset-adonis/build/adonis-typings",
-      "@adonisjs/lucid",
-      "@adonisjs/ally",
-      "adonis-react"
-    ]
+      "@microeinhundert/radonis-server",
+      "@adonisjs/i18n"
+    ],
+    "jsx": "react-jsx"
   }
 }

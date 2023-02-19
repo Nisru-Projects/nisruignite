@@ -1,0 +1,25 @@
+[
+  {
+    "type": "radonis-client-script",
+    "name": "entry.client.js",
+    "path": "/radonis/resources/entry.client.js",
+    "islands": [],
+    "tokens": []
+  },
+  {
+    "type": "radonis-island-script",
+    "name": "SomeInteractiveIsland.island.js",
+    "path": "/radonis/resources/components/SomeInteractiveIsland.island.js",
+    "islands": [
+      "SomeInteractiveIsland"
+    ],
+    "tokens": []
+  },
+  {
+    "type": "radonis-chunk-script",
+    "name": "chunk-XQNFPPNQ.js",
+    "path": "/radonis/chunk-XQNFPPNQ.js",
+    "islands": [],
+    "tokens": []
+  }
+]

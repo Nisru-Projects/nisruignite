@@ -4,14 +4,18 @@
     "./commands",
     "@adonisjs/core/build/commands/index.js",
     "@adonisjs/repl/build/commands",
-    "@adonisjs/lucid/build/commands"
+    "@microeinhundert/radonis-server/build/commands"
   ],
   "exceptionHandlerNamespace": "App/Exceptions/Handler",
   "aliases": {
     "App": "app",
     "Config": "config",
     "Database": "database",
-    "Contracts": "contracts"
+    "Contracts": "contracts",
+    "Views": "resources/views",
+    "Components": "resources/components",
+    "Layouts": "resources/layouts",
+    "resources": "resources"
   },
   "preloads": [
     "./start/routes",
@@ -23,9 +27,8 @@
     "@adonisjs/session",
     "@adonisjs/view",
     "@adonisjs/shield",
-    "@adonisjs/lucid",
-    "@adonisjs/ally",
-    "adonis-react"
+    "@microeinhundert/radonis-server",
+    "@adonisjs/i18n"
   ],
   "metaFiles": [
     {
@@ -33,8 +36,8 @@
       "reloadServer": false
     },
     {
-      "pattern": "resources/views/**/*.edge",
-      "reloadServer": false
+      "pattern": "resources/lang/**/*.(json|yaml)",
+      "reloadServer": true
     }
   ],
   "aceProviders": [
