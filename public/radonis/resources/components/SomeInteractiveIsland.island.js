@@ -3,7 +3,7 @@ import {
   __toESM,
   hydrateIsland,
   require_react
-} from "../../chunk-XQNFPPNQ.js";
+} from "../../chunk-6SVZNOZI.js";
 
 // node_modules/react/cjs/react-jsx-runtime.development.js
 var require_react_jsx_runtime_development = __commonJS({

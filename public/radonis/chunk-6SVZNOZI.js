@@ -158,38 +158,38 @@ var require_react_development = __commonJS({
           ReactSharedInternals.ReactDebugCurrentFrame = ReactDebugCurrentFrame;
           ReactSharedInternals.ReactCurrentActQueue = ReactCurrentActQueue;
         }
-        function warn(format3) {
+        function warn(format2) {
           {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format3, args);
+              printWarning("warn", format2, args);
             }
           }
         }
-        function error(format3) {
+        function error(format2) {
           {
             {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format3, args);
+              printWarning("error", format2, args);
             }
           }
         }
-        function printWarning(level, format3, args) {
+        function printWarning(level, format2, args) {
           {
             var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
             if (stack !== "") {
-              format3 += "%s";
+              format2 += "%s";
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function(item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format3);
+            argsWithFormat.unshift("Warning: " + format2);
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
@@ -2184,13 +2184,13 @@ var require_main = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/exception/main.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/exception/main.js
 var require_main2 = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/exception/main.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/exception/main.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createError = exports.RadonisException = void 0;
-    var RadonisException3 = class extends Error {
+    var RadonisException2 = class extends Error {
       /**
        * Name of the class that raised the exception
        */
@@ -2225,27 +2225,27 @@ var require_main2 = __commonJS({
         return `${this.name}: ${this.message}`;
       }
     };
-    exports.RadonisException = RadonisException3;
-    function format3(string, ...args) {
+    exports.RadonisException = RadonisException2;
+    function format2(string, ...args) {
       return args.reduce((p, c) => p.replace(/%s/, c), string);
     }
-    function createError3(message, code, status) {
-      return class extends RadonisException3 {
+    function createError2(message, code, status) {
+      return class extends RadonisException2 {
         static message = message;
         static code = code;
         static status = status;
         constructor(args, options) {
-          super(format3(message, ...args || []), options);
+          super(format2(message, ...args || []), options);
         }
       };
     }
-    exports.createError = createError3;
+    exports.createError = createError2;
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/exceptions.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/exceptions.js
 var require_exceptions = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/exceptions.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/exceptions.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.E_WILDCARD_ROUTES_NOT_SUPPORTED = exports.E_MISSING_ROUTE_PARAM = exports.E_MISSING_FETCH = exports.E_CANNOT_FIND_ROUTE = void 0;
@@ -2257,9 +2257,9 @@ var require_exceptions = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/url_builder/main.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/url_builder/main.js
 var require_main3 = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/url_builder/main.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/url_builder/main.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.UrlBuilder = void 0;
@@ -2347,9 +2347,9 @@ var require_main3 = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/create_internal_url.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/create_internal_url.js
 var require_create_internal_url = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/create_internal_url.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/create_internal_url.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.createInternalURL = void 0;
@@ -2360,9 +2360,9 @@ var require_create_internal_url = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/environment.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/environment.js
 var require_environment = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/environment.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/environment.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.isProduction = exports.isClient = exports.isServer = void 0;
@@ -2372,9 +2372,9 @@ var require_environment = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/non_null.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/non_null.js
 var require_non_null = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/non_null.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/non_null.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.nonNull = void 0;
@@ -2385,9 +2385,9 @@ var require_non_null = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/normalize_path.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/normalize_path.js
 var require_normalize_path = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/normalize_path.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/normalize_path.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.normalizePath = void 0;
@@ -4181,9 +4181,9 @@ var require_dist3 = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/get_fetch_or_fail.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/get_fetch_or_fail.js
 var require_get_fetch_or_fail = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/get_fetch_or_fail.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/get_fetch_or_fail.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.getFetchOrFail = void 0;
@@ -4198,9 +4198,9 @@ var require_get_fetch_or_fail = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/radonis_fetch.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/radonis_fetch.js
 var require_radonis_fetch = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/radonis_fetch.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/radonis_fetch.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.radonisFetch = void 0;
@@ -4237,9 +4237,9 @@ var require_radonis_fetch = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/separate_array.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/separate_array.js
 var require_separate_array = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/separate_array.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/separate_array.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.separateArray = void 0;
@@ -4250,9 +4250,9 @@ var require_separate_array = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/stringify_attributes.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/stringify_attributes.js
 var require_stringify_attributes = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/stringify_attributes.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/stringify_attributes.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.stringifyAttributes = void 0;
@@ -4272,9 +4272,9 @@ var require_stringify_attributes = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_leading_slash.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_leading_slash.js
 var require_strip_leading_slash = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_leading_slash.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_leading_slash.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.stripLeadingSlash = void 0;
@@ -4285,9 +4285,9 @@ var require_strip_leading_slash = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_origin_from_url.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_origin_from_url.js
 var require_strip_origin_from_url = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_origin_from_url.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/src/utils/strip_origin_from_url.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.stripOriginFromURL = void 0;
@@ -4298,9 +4298,9 @@ var require_strip_origin_from_url = __commonJS({
   }
 });
 
-// node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/index.js
+// node_modules/@microeinhundert/radonis-shared/build/cjs/index.js
 var require_cjs = __commonJS({
-  "node_modules/@microeinhundert/radonis-server/node_modules/@microeinhundert/radonis-shared/build/cjs/index.js"(exports) {
+  "node_modules/@microeinhundert/radonis-shared/build/cjs/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     exports.stripOriginFromURL = exports.stripLeadingSlash = exports.stringifyAttributes = exports.separateArray = exports.radonisFetch = exports.normalizePath = exports.nonNull = exports.isServer = exports.isProduction = exports.isClient = exports.createInternalURL = exports.UrlBuilder = exports.RadonisException = exports.createError = void 0;
@@ -5028,38 +5028,38 @@ var require_react_dom_development = __commonJS({
             suppressWarning = newSuppressWarning;
           }
         }
-        function warn(format3) {
+        function warn(format2) {
           {
             if (!suppressWarning) {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
                 args[_key - 1] = arguments[_key];
               }
-              printWarning("warn", format3, args);
+              printWarning("warn", format2, args);
             }
           }
         }
-        function error(format3) {
+        function error(format2) {
           {
             if (!suppressWarning) {
               for (var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
                 args[_key2 - 1] = arguments[_key2];
               }
-              printWarning("error", format3, args);
+              printWarning("error", format2, args);
             }
           }
         }
-        function printWarning(level, format3, args) {
+        function printWarning(level, format2, args) {
           {
             var ReactDebugCurrentFrame2 = ReactSharedInternals.ReactDebugCurrentFrame;
             var stack = ReactDebugCurrentFrame2.getStackAddendum();
             if (stack !== "") {
-              format3 += "%s";
+              format2 += "%s";
               args = args.concat([stack]);
             }
             var argsWithFormat = args.map(function(item) {
               return String(item);
             });
-            argsWithFormat.unshift("Warning: " + format3);
+            argsWithFormat.unshift("Warning: " + format2);
             Function.prototype.apply.call(console[level], console, argsWithFormat);
           }
         }
@@ -26159,7 +26159,7 @@ var hydrationContext = (0, import_react.createContext)({
 });
 var HydrationContextProvider = hydrationContext.Provider;
 
-// node_modules/@microeinhundert/radonis-hydrate/node_modules/@microeinhundert/radonis-shared/build/esm/src/exception/main.js
+// node_modules/@microeinhundert/radonis-shared/build/esm/src/exception/main.js
 var RadonisException = class extends Error {
   /**
    * Name of the class that raised the exception
@@ -26209,7 +26209,7 @@ function createError(message, code, status) {
   };
 }
 
-// node_modules/@microeinhundert/radonis-hydrate/node_modules/@microeinhundert/radonis-shared/build/esm/src/utils/environment.js
+// node_modules/@microeinhundert/radonis-shared/build/esm/src/utils/environment.js
 var isServer = typeof window === "undefined";
 var isClient = !isServer;
 
@@ -26335,65 +26335,12 @@ function hydrateIsland(islandIdentifier, Component) {
   return Component;
 }
 
-// node_modules/@microeinhundert/radonis/node_modules/@microeinhundert/radonis-shared/build/esm/src/exception/main.js
-var RadonisException2 = class extends Error {
-  /**
-   * Name of the class that raised the exception
-   */
-  name;
-  /**
-   * A status code for the error
-   */
-  status;
-  constructor(message, options) {
-    super(message, options);
-    const ErrorConstructor = this.constructor;
-    this.name = ErrorConstructor.name;
-    this.message = message || ErrorConstructor.message || "";
-    this.status = options?.status || ErrorConstructor.status || 500;
-    const code = options?.code || ErrorConstructor.code;
-    if (code !== void 0) {
-      this.code = code;
-    }
-    const help = ErrorConstructor.help;
-    if (help !== void 0) {
-      this.help = help;
-    }
-    Error.captureStackTrace(this, ErrorConstructor);
-  }
-  get [Symbol.toStringTag]() {
-    return this.constructor.name;
-  }
-  toString() {
-    if (this.code) {
-      return `${this.name} [${this.code}]: ${this.message}`;
-    }
-    return `${this.name}: ${this.message}`;
-  }
-};
-function format2(string, ...args) {
-  return args.reduce((p, c) => p.replace(/%s/, c), string);
-}
-function createError2(message, code, status) {
-  return class extends RadonisException2 {
-    static message = message;
-    static code = code;
-    static status = status;
-    constructor(args, options) {
-      super(format2(message, ...args || []), options);
-    }
-  };
-}
-
-// node_modules/@microeinhundert/radonis/node_modules/@microeinhundert/radonis-shared/build/esm/src/utils/environment.js
-var isServer2 = typeof window === "undefined";
-
 // node_modules/@microeinhundert/radonis/build/esm/src/init_client.js
 var import_react3 = __toESM(require_react());
 
 // node_modules/@microeinhundert/radonis/build/esm/src/exceptions.js
-var E_CANNOT_INIT_CLIENT_MORE_THAN_ONCE = createError2("The Radonis client cannot be initialized more than once. Make sure you initialize the client only once in your application, typically in your entry.client.ts file", "E_CANNOT_INIT_CLIENT_MORE_THAN_ONCE", 500);
-var E_CANNOT_INIT_CLIENT_ON_SERVER = createError2('The Radonis client cannot be initialized server-side. Make sure to only call "initClient" in the client bundle, typically in your "entry.client.ts" file', "E_CANNOT_INIT_CLIENT_ON_SERVER", 500);
+var E_CANNOT_INIT_CLIENT_MORE_THAN_ONCE = createError("The Radonis client cannot be initialized more than once. Make sure you initialize the client only once in your application, typically in your entry.client.ts file", "E_CANNOT_INIT_CLIENT_MORE_THAN_ONCE", 500);
+var E_CANNOT_INIT_CLIENT_ON_SERVER = createError('The Radonis client cannot be initialized server-side. Make sure to only call "initClient" in the client bundle, typically in your "entry.client.ts" file', "E_CANNOT_INIT_CLIENT_ON_SERVER", 500);
 
 // node_modules/@microeinhundert/radonis/build/esm/src/singletons.js
 var import_standalone2 = __toESM(require_standalone());
@@ -26408,7 +26355,7 @@ function hydrate() {
   });
 }
 async function initClient(options) {
-  if (isServer2) {
+  if (isServer) {
     throw new E_CANNOT_INIT_CLIENT_ON_SERVER();
   }
   if (isClientInitialized) {

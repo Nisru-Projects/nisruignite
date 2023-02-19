@@ -14,6 +14,11 @@ function Index () {
     <BaseLayout>
       <h1>{messages.title}</h1>
       <p>This is an empty view.</p>
+      <a href='/dashboard'>
+        <button>
+          Dashboard
+        </button>
+      </a>
       <HydrationRoot>
         <SomeInteractiveIsland />
       </HydrationRoot>

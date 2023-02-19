@@ -12,14 +12,30 @@
     "rootDir": "./",
     "sourceMap": true,
     "paths": {
-      "App/*": ["./app/*"],
-      "Config/*": ["./config/*"],
-      "Contracts/*": ["./contracts/*"],
-      "Database/*": ["./database/*"],
-      "Views/*": ["./resources/views/*"],
-      "Components/*": ["./resources/components/*"],
-      "Layouts/*": ["./resources/layouts/*"],
-      "resources/*": ["./resources/*"]
+      "App/*": [
+        "./app/*"
+      ],
+      "Config/*": [
+        "./config/*"
+      ],
+      "Contracts/*": [
+        "./contracts/*"
+      ],
+      "Database/*": [
+        "./database/*"
+      ],
+      "Views/*": [
+        "./resources/views/*"
+      ],
+      "Components/*": [
+        "./resources/components/*"
+      ],
+      "Layouts/*": [
+        "./resources/layouts/*"
+      ],
+      "resources/*": [
+        "./resources/*"
+      ]
     },
     "types": [
       "@adonisjs/core",
@@ -29,7 +45,9 @@
       "@adonisjs/shield",
       "@japa/preset-adonis/build/adonis-typings",
       "@microeinhundert/radonis-server",
-      "@adonisjs/i18n"
+      "@adonisjs/i18n",
+      "@adonisjs/ally",
+      "@adonisjs/lucid"
     ],
     "jsx": "react-jsx"
   }

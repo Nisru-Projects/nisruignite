@@ -1,5 +1,5 @@
 import { island } from '@microeinhundert/radonis'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function SomeInteractiveIsland () {
   const [count, setCount] = useState(0)
