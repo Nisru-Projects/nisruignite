@@ -1,9 +1,7 @@
 import {
   __commonJS,
-  __toESM,
-  hydrateIsland,
   require_react
-} from "../../chunk-6SVZNOZI.js";
+} from "./chunk-6SVZNOZI.js";
 
 // node_modules/react/cjs/react-jsx-runtime.development.js
 var require_react_jsx_runtime_development = __commonJS({
@@ -874,10 +872,10 @@ var require_react_jsx_runtime_development = __commonJS({
           }
         }
         var jsx = jsxWithValidationDynamic;
-        var jsxs2 = jsxWithValidationStatic;
+        var jsxs = jsxWithValidationStatic;
         exports.Fragment = REACT_FRAGMENT_TYPE;
         exports.jsx = jsx;
-        exports.jsxs = jsxs2;
+        exports.jsxs = jsxs;
       })();
     }
   }
@@ -895,22 +893,8 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// radonis-island-script:D:\GitHub\nisru\nisruignite\resources\components\SomeInteractiveIsland.island.tsx
-var import_react = __toESM(require_react());
-var import_jsx_runtime = __toESM(require_jsx_runtime());
-function SomeInteractiveIsland() {
-  const [count, setCount] = (0, import_react.useState)(0);
-  function handleClick() {
-    setCount(count + 1);
-  }
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", { type: "button", onClick: handleClick, children: [
-    "Click me ",
-    count
-  ] });
-}
-var SomeInteractiveIsland_island_default = hydrateIsland("SomeInteractiveIsland", SomeInteractiveIsland);
 export {
-  SomeInteractiveIsland_island_default as default
+  require_jsx_runtime
 };
 /*! Bundled license information:
 

@@ -1,7 +1,7 @@
 import { useI18n } from '@microeinhundert/radonis'
 import { BaseLayout } from 'Layouts/Base'
 import { HydrationRoot } from '@microeinhundert/radonis'
-import SomeInteractiveIsland from 'Components/SomeInteractiveIsland.island'
+import SomeInteractiveIsland from 'Components/islands/SomeInteractiveIsland.island'
 
 function Index () {
   const { formatMessage$ } = useI18n()

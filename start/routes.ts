@@ -25,7 +25,7 @@ Route.get('/', 'HomeController.index').as('home')
 Route.get('/dashboard', 'DashboardController.index').middleware(['auth', 'admin']).as('dashboard')
 
 Route.group(() => {
-  Route.get('/login', 'AuthController.index').as('login')
+  Route.get('/login', 'AuthController.login').as('login')
   Route.get('/logout', 'AuthController.logout').as('logout')
   Route.get('/discord/callback', 'AuthController.callback').as('callback')
 }).prefix('/auth')
