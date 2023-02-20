@@ -1,4 +1,4 @@
-import Database from '@ioc:Adonis/Lucid/Database'
+import checkPermissions from 'App/Utils/checkPermissions'
 
 export default class AuthController {
   public async login ({ ally }) {
@@ -6,7 +6,7 @@ export default class AuthController {
   }
   public async logout ({ response, session }) {
     session.forget('user')
-    session.forget('account')
+    //session.forget('account')
     return response.redirect('/')
   }
   public async callback ({ ally, response, session }) {
@@ -22,10 +22,10 @@ export default class AuthController {
 
     const user = await discord.user()
 
-    const account = await Database.from('users').where('discord_id', user.id).first()
+    user.isAdmin = await checkPermissions(user.id, ['admin.*'])
 
     session.put('user', user)
-    session.put('account', account)
+    //session.put('account', account)
 
     return response.redirect().toRoute('/')
   }

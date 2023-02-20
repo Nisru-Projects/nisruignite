@@ -6,6 +6,7 @@ interface DashboardProps {
   user: {
     name: string
     avatarURL: string
+    isAdmin: boolean
   }
 }
 
@@ -13,7 +14,7 @@ function Dashboard ({ user }: DashboardProps) {
   return (
     <BaseLayout>
       <HydrationRoot>
-        <Sidebar />
+        <Sidebar isAdmin={user.isAdmin} />
       </HydrationRoot>
       <p>Hello from Adonis React! {user.name}</p>
       <br />

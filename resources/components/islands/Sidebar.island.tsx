@@ -2,7 +2,7 @@ import { island } from '@microeinhundert/radonis'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
-const Sidebar = () => {
+const Sidebar = ({ isAdmin }: { isAdmin: boolean }) => {
   const [isOpen, setIsOpen] = useState(true)
 
   const handleToggle = () => {
@@ -11,13 +11,20 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* <div
-        className={`fixed left-0 top-0 bottom-0 bg-gray-900 w-64 p-8 transition-all duration-300 ${
-          !isOpen ? '-translate-x-full' : ''
-        } inset-y-0`}
-      > */}
-      <nav className={ `mt-8 ${!isOpen ? '-translate-x-full' : ''} fixed inset-y-0 left-0 w-64 bg-gray-800 px-8 py-4 transform transition-transform duration-200 ease-in-out` }>
+      <nav className={ `mt-8 ${!isOpen ? '-translate-x-full' : ''} fixed inset-y-0 left-0 w-64 bg-gray-800
+      px-8 py-4 transform transition-transform duration-200 ease-in-out h-full overflow-y-auto` }>
+        <h1 className="text-2xl font-bold text-white mb-4">Logo</h1>
         <ul>
+          {isAdmin && (
+            <li>
+              <a
+                className="text-purple-400 hover:text-pink font-medium block py-2"
+                href="/dashboard/admin"
+              >
+                Admin
+              </a>
+            </li>
+          )}
           <li>
             <a
               className="text-gray-400 hover:text-white font-medium block py-2"
@@ -52,23 +59,13 @@ const Sidebar = () => {
           </li>
         </ul>
       </nav>
-      {/* </div> */}
       <button
-        className="absolute left-0 bottom-0 p-4 text-purple-400 hover:text-purple
-          focus:outline-none transition-all duration-300"
+        className="absolute left-0 bottom-0 px-3 py-2 text-gray-400 hover:text-gray
+          focus:outline-none transition-all duration-300 border border-gray-400 rounded"
         onClick={handleToggle}
       >
         {!isOpen ? <FaBars /> : <FaTimes />}
       </button>
-      {/* {!isOpen && (
-        <button
-          className="absolute left-0 bottom-0 p-8 text-gray-400 hover:text-purple focus:outline-none
-          transition-all duration-300"
-          onClick={handleToggle}
-        >
-          <FaBars />
-        </button>
-      )} */}
     </>
   )
 }

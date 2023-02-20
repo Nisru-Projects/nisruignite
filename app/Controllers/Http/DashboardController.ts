@@ -10,6 +10,7 @@ export default class DashboardController {
     const user = {
       name: userSession?.name,
       avatarURL: userSession?.avatarURL,
+      isAdmin: userSession?.isAdmin,
     }
 
     return radonis.render(Dashboard, { user })
