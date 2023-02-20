@@ -1,3 +1,5 @@
+import { HydrationRoot } from '@microeinhundert/radonis'
+import Sidebar from 'Components/islands/Sidebar.island'
 import { BaseLayout } from 'Layouts/Base'
 
 interface DashboardProps {
@@ -10,6 +12,9 @@ interface DashboardProps {
 function Dashboard ({ user }: DashboardProps) {
   return (
     <BaseLayout>
+      <HydrationRoot>
+        <Sidebar />
+      </HydrationRoot>
       <p>Hello from Adonis React! {user.name}</p>
       <br />
       <a href='/'>

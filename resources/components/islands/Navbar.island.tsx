@@ -1,74 +1,40 @@
+/* eslint-disable max-len */
 import { island } from '@microeinhundert/radonis'
-import React from 'react'
+import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const handleToggle = () => {
+  const toggle = () => {
     setIsOpen(!isOpen)
   }
 
   return (
-    <nav className="flex justify-between items-center py-4 px-8 bg-white">
-      <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-gray-800">Logo</h1>
+    <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+      <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <span className="font-semibold text-xl tracking-tight">Logo</span>
       </div>
-      <div className="hidden md:block">
-        <ul className="flex space-x-8">
-          <li>
-            <a
-              className="text-gray-800 hover:text-gray-500"
-              href="#"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              className="text-gray-800 hover:text-gray-500"
-              href="#"
-            >
-              About
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="md:hidden flex items-center">
+      <div className="block md:hidden">
         <button
-          type="button"
-          className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
-          onClick={handleToggle}
+          onClick={toggle}
+          className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
-      {/* Adicione aqui o menu que aparece quando a tela está em tamanho menor que md */}
-      {isOpen && (
-        <div className="md:hidden bg-white w-full">
-          <ul className="flex flex-col items-center">
-            <li>
-              <a
-                className="block py-2 px-4 text-gray-800 hover:bg-gray-100"
-                href="#"
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                className="block py-2 px-4 text-gray-800 hover:bg-gray-100"
-                href="#"
-              >
-                About
-              </a>
-            </li>
-          </ul>
+      <div className={`${isOpen ? 'block' : 'hidden'} w-full block flex-grow md:flex md:items-center md:w-auto`}>
+        <div className="text-sm md:flex-grow">
+          <a href="#responsive-header" className="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4">
+            Home
+          </a>
+          <a href="#responsive-header" className="block mt-4 md:inline-block md:mt-0 text-gray-300 hover:text-white mr-4">
+            About
+          </a>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
 
 export default island('Navbar', Navbar)
-

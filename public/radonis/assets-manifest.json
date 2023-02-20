@@ -8,11 +8,27 @@
   },
   {
     "type": "radonis-island-script",
+    "name": "Sidebar.island.js",
+    "path": "/radonis/resources/components/islands/Sidebar.island.js",
+    "islands": [
+      "Sidebar"
+    ],
+    "tokens": []
+  },
+  {
+    "type": "radonis-island-script",
     "name": "Navbar.island.js",
     "path": "/radonis/resources/components/islands/Navbar.island.js",
     "islands": [
       "Navbar"
     ],
+    "tokens": []
+  },
+  {
+    "type": "radonis-chunk-script",
+    "name": "chunk-P5RLDI5R.js",
+    "path": "/radonis/chunk-P5RLDI5R.js",
+    "islands": [],
     "tokens": []
   },
   {
