@@ -23,7 +23,7 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', 'HomeController.index').as('home')
 
 Route.get('/dashboard/', 'DashboardController.index').middleware('auth').as('dashboard')
-Route.get('/dashboard/admin', 'DashboardController.index').middleware(['auth', 'admin']).as('admindashboard')
+Route.get('/dashboard/ignite', 'DashboardController.ignite').middleware(['auth', 'admin']).as('ignite')
 
 Route.group(() => {
   Route.get('/login', 'AuthController.login').as('login')

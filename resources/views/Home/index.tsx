@@ -12,16 +12,18 @@ function Index () {
 
   return (
     <BaseLayout>
-      <h1>{messages.title}</h1>
-      <p>This is an empty view.</p>
-      <a href='/dashboard'>
-        <button>
+      <div className='mt-14 p-4'>
+        <h1>{messages.title}</h1>
+        <p>This is an empty view.</p>
+        <a href='/dashboard'>
+          <button>
           Dashboard
-        </button>
-      </a>
-      <HydrationRoot>
-        <SomeInteractiveIsland />
-      </HydrationRoot>
+          </button>
+        </a>
+        <HydrationRoot>
+          <SomeInteractiveIsland />
+        </HydrationRoot>
+      </div>
     </BaseLayout>
   )
 }

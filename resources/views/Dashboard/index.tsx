@@ -1,29 +1,59 @@
-import { HydrationRoot } from '@microeinhundert/radonis'
-import Sidebar from 'Components/islands/Sidebar.island'
-import { BaseLayout } from 'Layouts/Base'
+import { DashboardLayout, DashboardLayoutProps } from 'Layouts/Dashboard'
 
-interface DashboardProps {
-  user: {
-    name: string
-    avatarURL: string
-    isAdmin: boolean
-  }
-}
-
-function Dashboard ({ user }: DashboardProps) {
+function Dashboard ({ user }: DashboardLayoutProps) {
   return (
-    <BaseLayout>
-      <HydrationRoot>
-        <Sidebar isAdmin={user.isAdmin} />
-      </HydrationRoot>
-      <p>Hello from Adonis React! {user.name}</p>
-      <br />
-      <a href='/'>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-          Home
-        </button>
-      </a>
-    </BaseLayout>
+    <DashboardLayout user={user}>
+      <div className="p-4 sm:ml-64">
+        <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+          <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+            <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+            <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+              <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </DashboardLayout>
   )
 }
 
