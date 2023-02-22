@@ -18,7 +18,9 @@ function DashboardLayout ({ children, user }: DashboardLayoutProps) {
       <HydrationRoot>
         <Sidebar isAdmin={user.isAdmin} />
       </HydrationRoot>
-      <main>{children}</main>
+      <div className="p-4 sm:ml-64 dark:bg-gray-900 min-h-screen">
+        <main>{children}</main>
+      </div>
     </BaseLayout>
   )
 }
